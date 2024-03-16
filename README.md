@@ -29,11 +29,26 @@ Used Bayesian Sweep functionality provided by wandb to find the best values for 
 - Optimizers
 - Activation
 
+## Best Model Configurations
+
+- Optimizer : nadam
+- Activation : tanh
+- Loss function : cross entropy
+- No. of epochs : 10
+- Batch size : 64
+- Learning Rate : 0.001
+- Hidden Size : 128
+- No. of hidden layers : 5
+- Weight Initialization : Xavier
+- Weight Decay : 0
+- Momentum : 0.5
+- Beta : 0.9
+
 ## Python Script for Training Model
 
 I designed a python script (train.py) to train above neural network with different parameters. Inorder to execute it just run below command :
 ```
-python train.py --wandb_project "myprojectname" --wandb_entity "myname" --dataset "fashion_mnist" --epoch 10 --batch_size 32 --loss "cross_entropy" --optimizer "nadam" --learning_rate 0.001 --activation "tanh" --num_layers 5 --hidden_size 32 --weight_decay 0.005
+python train.py --wandb_project "myprojectname" --wandb_entity "myname" --dataset "fashion_mnist" --epoch 10 --batch_size 32 --loss "cross_entropy" --optimizer "nadam" --learning_rate 0.001 --activation "tanh" --num_layers 5 --hidden_size 32 --weight_decay 0
 ```
 OR 
 
@@ -41,6 +56,11 @@ To just run best model just execute :
 ```
 python train.py
 ```
+
+## Results
+
+Wandb allowed us to keep track of training process using sweep functionality and helped me to identify best set of hyperparameters that gave best accuracy. I used wandb to address Q1, Q4, Q5, Q6, Q7 of assignments and obtained the results which can be checked from the given link :  https://wandb.ai/cs23m009/DL_Assignment_1/reports/CS6910-Assignment-1--Vmlldzo3MTI3NDc0
+
 
 ## Requirements
 
