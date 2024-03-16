@@ -354,7 +354,7 @@ def train(X_train, y_train, params, hidden_layer_size, no_layers, loss_func, act
 
     #final_res = get_prediction(y_predict)
     print(f'Epoch {epoch+1}, Train Loss: {train_loss}, Train Accuracy: {train_accuracy}, Val Loss: {val_loss}, Val Accuracy: {val_accuracy}')
-    #wandb.log({'train_loss': train_loss, 'train_accuracy': train_accuracy, 'val_loss' : val_loss, 'val_accuracy' : val_accuracy, 'epoch': epoch+1})
+    wandb.log({'train_loss': train_loss, 'train_accuracy': train_accuracy, 'val_loss' : val_loss, 'val_accuracy' : val_accuracy, 'epoch': epoch+1})
 
 def confusion_matrix(X_test, y_test, params, hidden_layer_size, hidden_layers, loss_func, activation_func, wt_init, learning_rate, epochs, batch, opt_func, wt_decay):
   #wandb.init(project = 'DL_Assignment_1', entity = 'cs23m009')
