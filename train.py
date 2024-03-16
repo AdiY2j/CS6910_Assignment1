@@ -31,7 +31,7 @@ args = parser.parse_args()
 
 
 
-wandb.login(key='72a114321dd97dbf11db7b15eb05b2660c2faa94')
+wandb.login(key='')
 
 if args.dataset == "fashion_mnist" :
   (X_train, y_train), (X_test, y_test) = fashion_mnist.load_data()
@@ -391,8 +391,8 @@ def confusion_matrix(X_test, y_test, params, hidden_layer_size, hidden_layers, l
   print(test_accuracy, test_loss)
   #wandb.finish()
 
-#wandb.init(project = args.wandb_project, entity = args.wandb_entity)
+wandb.init(project = args.wandb_project, entity = args.wandb_entity)
 params = initializeParam(784, 10, args.hidden_size, args.num_layers, args.activation, args.weight_init)
 train(X_train, y_train, params, args.hidden_size, args.num_layers, args.loss, args.activation, args.weight_init, args.learning_rate, args.epochs, args.batch_size, args.optimizer, args.weight_decay)
 #confusion_matrix(X_test, y_test, params, args.hidden_size, args.num_layers, args.loss, args.activation, args.weight_init, args.learning_rate, args.epochs, args.batch_size, args.optimizer, args.weight_decay)
-#wandb.finish()
+wandb.finish()
