@@ -38,7 +38,7 @@ if args.dataset == "fashion_mnist" :
 else :
   (X_train, y_train), (X_test, y_test) = mnist.load_data()
 
-if args.loss == "mean_squared_loss":
+if args.loss == "mean_squared_error":
   args.loss = "squared_loss"
 if args.optimizer == "nag":
   args.optimizer = "nesterov"
